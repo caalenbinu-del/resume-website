@@ -1,0 +1,341 @@
+/* 1. CSS Variables: Neutrals and One Accent Colour */
+:root {
+  --bg-main: #fbfbfe;
+  --bg-surface: #ffffff;
+  --text-main: #050315;
+  --text-muted: #3b3952;
+  --border-line: #e2e1ec;
+  --accent: #2f27ce;
+  --accent-hover: #231ca3;
+}
+
+/* 2. Element Selectors: Base Reset & Modular Typography Scale */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%; /* 16px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-main);
+}
+
+h1 { font-size: 1.990rem; margin-bottom: 16px; }
+h2 { font-size: 1.658rem; margin-top: 48px; margin-bottom: 16px; }
+h3 { font-size: 1.382rem; margin-top: 24px; margin-bottom: 8px; }
+h4 { font-size: 1.152rem; margin-bottom: 4px; }
+h5 { font-size: 0.960rem; }
+small { font-size: 0.667rem; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+
+p, li {
+  max-width: 70ch;
+  margin-bottom: 8px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* 3. Class Selectors: Layout Containers, Flexbox Navbar, Buttons & Grid Cards */
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border-line);
+  background-color: var(--bg-main);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 64px;
+  gap: 16px;
+}
+
+.brand-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.152rem;
+  color: var(--text-main);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+}
+
+.nav-link {
+  color: var(--text-main);
+  font-weight: 600;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.action-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: var(--bg-surface);
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--bg-surface);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: var(--bg-surface);
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-line);
+  border-radius: 4px;
+  padding: 24px 16px;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.card p {
+  color: var(--text-muted);
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+/* 4. ID Selectors: Unique Page Sections & Paper Resume Sheet */
+#hero {
+  padding: 48px 0 32px;
+  border-bottom: 1px solid var(--border-line);
+}
+
+.lead-text {
+  font-size: 1.152rem;
+  color: var(--text-main);
+  margin-bottom: 12px;
+}
+
+.availability-text, .meta-text {
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 12px;
+}
+
+#impact, #case-study, #resume-wrapper {
+  padding-top: 8px;
+}
+
+.resume-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+.resume-toolbar h2 {
+  margin: 0;
+}
+
+#resume {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-line);
+  padding: 40px;
+  border-radius: 4px;
+}
+
+.resume-header {
+  border-bottom: 1px solid var(--border-line);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.resume-header h2 {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+.resume-contact {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.resume-profile {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.resume-section h3 {
+  font-size: 1.152rem;
+  border-bottom: 1px solid var(--border-line);
+  padding-bottom: 4px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.resume-item {
+  margin-bottom: 16px;
+}
+
+.resume-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.resume-list {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+#contact {
+  margin-top: 48px;
+  padding: 40px 24px 64px;
+  border-top: 1px solid var(--border-line);
+}
+
+#contact h2 {
+  margin-top: 0;
+}
+
+/* 5. Media Queries: Mobile (<700px), Print (One A4 Sheet) & Reduced Motion */
+@media (max-width: 700px) {
+  .navbar, .resume-row, .resume-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-list {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+  #resume {
+    padding: 24px 16px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  body {
+    background: #ffffff;
+    color: #000000;
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+  .site-header, #hero, #impact, #case-study, .resume-toolbar, #contact {
+    display: none !important;
+  }
+  .container, #resume-wrapper, #resume {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: #ffffff;
+  }
+  #resume a, #resume h2, #resume h3, #resume h4, #resume small, .resume-contact {
+    color: #000000 !important;
+    text-decoration: none;
+  }
+  p, li {
+    max-width: 100%;
+    margin-bottom: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  a {
+    transition: none;
+  }
+}
